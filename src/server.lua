@@ -10,7 +10,9 @@ ESX.RegisterUsableItem('ticket_news', function(source)
     local xPlayer = ESX.GetPlayerFromId(source)
     local ticket = xPlayer.getInventoryItem('ticket_news')
     if ticket.count >= 1 then
-        print("test")
+        if Config.debug then
+            print("Inventory check")
+        end
 	    xPlayer.removeInventoryItem('ticket_news', 1)
 	    TriggerClientEvent('bblutin_annonces:getAnnonce', source)
 	end	
@@ -24,11 +26,10 @@ AddEventHandler('bblutin_annonces:annonceStart', function(result , society)
     local xPlayers = ESX.GetPlayers()
     local text = result
     local titre = society
-    print(society.." : "..text)
-    for i = 1, #xPlayers, 1 do
-        local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-        TriggerClientEvent('bblutin_annonces:annonceStart', xPlayers[i], text, titre)
+    if Config.debug then
+        print(society.." : "..text)
     end
+    TriggerClientEvent('bblutin_annonces:annonceStart', -1 , text, titre)
 
     Citizen.Wait(10000)
 
