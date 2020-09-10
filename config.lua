@@ -1,4 +1,5 @@
 
+Config = {}
 
 Config.debug = true
 
