@@ -34,7 +34,7 @@ ensure bblutin_annonces
 
 ## 📺 Preview
 
-[![Aperçu](https://i.imgur.com/J61FTCv.png)](https://i.imgur.com/J61FTCv.png)
+[![Aperçu](https://i.imgur.com/J61FTCv.png)](https://streamable.com/8oc6o8)
 
 ---
 
