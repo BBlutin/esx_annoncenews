@@ -4,6 +4,6 @@ Discription "Script d'annonces by BBlutin"
 
 Version "0.2"
 
-client_scripts {"src/client.lua"}
+client_scripts {"src/client.lua","config.lua"}
 
-server_scripts {"src/server.lua"} 
+server_scripts {"src/server.lua","config.lua"} 

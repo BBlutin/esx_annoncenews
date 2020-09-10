@@ -66,7 +66,7 @@ function MessageAnnonce()
 	Citizen.CreateThread(function()
     	while messageannoncenotfinish do
 			Citizen.Wait(10)
-			local result = KeyboardInput("Annonce :", "Passez votre annonce", 99)
+			local result = KeyboardInput(Config.title, Config.placeholder, 99)
             local society = ESX.PlayerData.job.label
 		    messageannoncenotfinish = false
 		    TriggerServerEvent('bblutin_annonces:annonceStart', result, society)   
