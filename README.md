@@ -14,12 +14,12 @@ How to get started with the script
 - You can clone this repo to your local machine using :
 ```
 cd resources 
-git clone https://github.com/BBlutin/esx_annoncenews/
+git clone https://github.com/BBlutin/esx_annoncenews.git
 ```
 
 - Or you can download it manually :
 
-  - Download https://github.com/BBlutin/esx_annoncenews/
+  - Download https://github.com/BBlutin/esx_annoncenews/archive/master.zip
   - Put it in the [esx] directory
   
 ### Import SQL & Start
