@@ -53,6 +53,8 @@ ensure bblutin_annonces
 
 - 📄 __resource.lua
 
+- 📄 config.lua
+
 ---
 
 ## 🔰 License
