@@ -37,21 +37,39 @@ AddEventHandler('bblutin_annonces:getAnnonce', function(source)
 	MessageAnnonce()
 end)
 
+function KeyboardInput(TextEntry, ExampleText, MaxStringLenght)
+
+	AddTextEntry('FMMC_KEY_TIP1', TextEntry) 
+	DisplayOnscreenKeyboard(1, "FMMC_KEY_TIP1", "", ExampleText, "", "", "", MaxStringLenght) 
+	blockinput = true 
+
+	while UpdateOnscreenKeyboard() ~= 1 and UpdateOnscreenKeyboard() ~= 2 do 
+		for i = 0, 357 do
+			DisableAllControlActions(i)
+		end
+		Citizen.Wait(1)
+	end
+		
+	if UpdateOnscreenKeyboard() ~= 2 then
+		local result = GetOnscreenKeyboardResult() 
+		Citizen.Wait(500) 
+		blockinput = false 
+		return result 
+	else
+		Citizen.Wait(500) 
+		blockinput = false 
+		return nil 
+	end
+end
+
 function MessageAnnonce()
 	Citizen.CreateThread(function()
     	while messageannoncenotfinish do
-    		Citizen.Wait(10)
-			DisplayOnscreenKeyboard(1, "FMMC_MPM_NA", "", "", "", "", "", 30)
-		    while (UpdateOnscreenKeyboard() == 0) do
-		        DisableAllControlActions(0);
-		       Citizen.Wait(1)
-		    end
-		    if (GetOnscreenKeyboardResult()) then
-                local result = GetOnscreenKeyboardResult()
-                local society = ESX.PlayerData.job.label
-		        messageannoncenotfinish = false
-		        TriggerServerEvent('bblutin_annonces:annonceStart', result, society)   
-		    end
+			Citizen.Wait(10)
+			local result = KeyboardInput("Annonce :", "Passez votre annonce", 99)
+            local society = ESX.PlayerData.job.label
+		    messageannoncenotfinish = false
+		    TriggerServerEvent('bblutin_annonces:annonceStart', result, society)   
 		end
 	end)
 end
