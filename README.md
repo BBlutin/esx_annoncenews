@@ -1,4 +1,4 @@
-# esx_annoncenews
+# lulu_annoncejob
  > [EN] Allows you to place scaleform ads using an item
 
  > [FR] Permet de passer des annonces scaleform en utilisant un item
