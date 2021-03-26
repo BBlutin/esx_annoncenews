@@ -14,7 +14,7 @@ How to get started with the script
 - You can clone this repo to your local machine using :
 ```
 cd resources 
-git clone https://github.com/BBlutin/esx_annoncenews.git
+git clone https://github.com/BBlutin/lulu_annoncejob.git
 ```
 
 - Or you can download it manually :
